@@ -19,6 +19,22 @@ to_sql（）函式實現了對資料庫的寫入，並不需要實現新建MySQL
 sqlalchemy模組實現了與不同資料庫的連線，
 而pymysql模組則使得Python能夠操作MySQL資料庫。
 ```
+SQLITE
+用pandas來讀取sqlite資料檔案
+
+read_sql()
+read_sql_query()
+
+import pandas as pd
+
+with sqlite3.connect('test_database.sqlite') as con:
+# read_sql_query和read_sql都能通過SQL語句從資料庫檔案中獲取資料資訊
+df = pd.read_sql_query("SELECT * FROM test_table", con=con)
+# df = pd.read_sql("SELECT * FROM test_table", con=con)
+print(df.shape)
+print(df.dtypes)
+print(df.head())
+```
 
 ## MySQL
 
