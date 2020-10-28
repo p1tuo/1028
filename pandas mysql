@@ -1,21 +1,27 @@
 #pandas 讀寫MySQL資料庫
+
 ```
 WIN10.OVA
 安裝anaconda
 
 安裝額外套件
+
 ```
+
 ```
 pandas
 sqlalchemy
 pymysql
+
 ```
 pandas模組提供了read_sql_query（）函式實現了對資料庫的查詢，
 to_sql（）函式實現了對資料庫的寫入，並不需要實現新建MySQL資料表。
 sqlalchemy模組實現了與不同資料庫的連線，
 而pymysql模組則使得Python能夠操作MySQL資料庫。
 ```
-#MySQL
+
+##MySQL
+
 ```
 https://tech.digitgeek.net/t/51.html
 mysql->CREATE DATABASE dbname;//建立資料庫 
@@ -33,7 +39,9 @@ mysql->SHOW TABLES;//顯示表資訊，有那些可用的表
 mysql->DESCRIBE tablename;//顯示建立的表的資訊
 
 ```
-#Redis
+
+##Redis
+
 ```
 Redis ( REmote DIctionary Server )
 Redis 是一個開源的NoSQL資料庫。
@@ -51,7 +59,9 @@ http://dog0416.blogspot.com/2017/03/redis-redis-window-mac.html
 redis-cli info 看 command 工具版本號
 How to set/get pandas.DataFrame to/from Redis?
 https://stackoverflow.com/questions/37943778/how-to-set-get-pandas-dataframe-to-from-redis
+
 ```
-#MongoDB
+##MongoDB
+
 ```
 
