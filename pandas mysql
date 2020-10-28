@@ -38,6 +38,42 @@ mysql->SHOW TABLES;//顯示表資訊，有那些可用的表
 
 mysql->DESCRIBE tablename;//顯示建立的表的資訊
 
+
+pip install sqlalchemy
+物件關係對映技術，即ORM（Object-Relational Mapping）技術，指的是把關聯式資料庫的表結構對映到物件上，
+通過使用描述物件和資料庫之間對映的後設資料，將程式中的物件自動持久化到關聯式資料庫中。
+  
+在Python中，最有名的ORM框架是SQLAlchemy
+
+https://codertw.com/%E8%B3%87%E6%96%99%E5%BA%AB/16156/
+
+SQLAlchemy模組提供了create_engine()函式用來初始化資料庫連線，
+
+SQLAlchemy用一個字串表示連線資訊：
+
+‘資料庫型別 資料庫驅動名稱://使用者名稱:口令@機器地址:埠號/資料庫名’
+# -*- coding: utf-8 -*-
+# 匯入必要模組
+import pandas as pd
+from sqlalchemy import create_engine
+
+
+# 初始化資料庫連線，使用pymysql模組
+# MySQL的使用者：root, 密碼:147369, 埠：3306,資料庫：mydb
+engine = create_engine('mysql pymysql://root:147369@localhost:3306/mydb')
+
+
+# 查詢語句，選出employee表中的所有資料
+sql = '''
+select * from employee;
+'''
+
+# read_sql_query的兩個引數: sql語句， 資料庫連線
+df = pd.read_sql_query(sql, engine)
+
+# 輸出employee表的查詢結果
+print(df)
+
 ```
 
 ## Redis
@@ -59,6 +95,14 @@ http://dog0416.blogspot.com/2017/03/redis-redis-window-mac.html
 redis-cli info 看 command 工具版本號
 How to set/get pandas.DataFrame to/from Redis?
 https://stackoverflow.com/questions/37943778/how-to-set-get-pandas-dataframe-to-from-redis
+
+Using Redis with Python to Analyze COVID-19 Data - RedisConf 2020
+https://www.youtube.com/watch?v=mdC9idz-Ois
+
+https://github.com/dmitrypol/covid19
+
+https://github.com/dmitrypol/redis_data
+https://github.com/dmitrypol
 
 ```
 ## MongoDB
